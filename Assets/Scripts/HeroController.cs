@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 
 [RequireComponent(typeof(Rigidbody2D))]
 
@@ -30,6 +30,12 @@ public class HeroController : MonoBehaviour
     Animator animator;
     Hero myplayer;
     float speed;
+
+
+    private void Awake()
+    {
+        EnventorySlot.setPlayerItem += SetWeapon;
+    }
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
@@ -100,7 +106,7 @@ public class HeroController : MonoBehaviour
 
         if (controller.XYAxis.x!=0)//left right
         {
-            Debug.Log(controller.XYAxis);
+           // Debug.Log(controller.XYAxis);
             swordTest.transform.right = new Vector3(-controller.XYAxis.x * 180, -controller.XYAxis.y * 180,  90);
             swordTest.transform.localPosition= new Vector3(0.128f* controller.XYAxis.x, 0.128f * controller.XYAxis.y, 0.128f );
            
@@ -115,5 +121,16 @@ public class HeroController : MonoBehaviour
         transform.localRotation = Quaternion.identity;
         transform.localPosition = Vector3.zero;
         transform.localScale = Vector3.one;
+    }
+
+    void SetWeapon(Sprite weaponSprite)
+    {
+        Debug.Log("Change sprite");
+
+       var im= swordTest.GetComponent<SpriteRenderer>();
+        im.sprite = weaponSprite;
+        Debug.Log(im.name);
+
+
     }
 }

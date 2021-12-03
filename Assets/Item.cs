@@ -17,7 +17,6 @@ public class Item
     int randID;
     EquipType itemType;
  
- 
 
     public Image Image
     {

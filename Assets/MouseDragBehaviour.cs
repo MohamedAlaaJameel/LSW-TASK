@@ -2,6 +2,9 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
  
+
+
+//from web ... 
 public class MouseDragBehaviour : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHandler
 {
     private Vector2 lastMousePosition;
@@ -12,7 +15,7 @@ public class MouseDragBehaviour : MonoBehaviour, IDragHandler, IBeginDragHandler
     /// <param name="eventData">mouse pointer event data</param>
     public void OnBeginDrag(PointerEventData eventData)
     {
-        Debug.Log("Begin Drag");
+      //  Debug.Log("Begin Drag");
         lastMousePosition = eventData.position;
     }
 
@@ -42,7 +45,7 @@ public class MouseDragBehaviour : MonoBehaviour, IDragHandler, IBeginDragHandler
     /// <param name="eventData"></param>
     public void OnEndDrag(PointerEventData eventData)
     {
-        Debug.Log("End Drag");
+     //   Debug.Log("End Drag");
         //Implement your funtionlity here
     }
 
