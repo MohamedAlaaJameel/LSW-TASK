@@ -27,8 +27,8 @@ public class Hero
         this.maxSpeed = maxSpeed;
 
     }
-
-    public void updatePlayerAnimation()
+    //
+    public void updatePlayerAnimation()//string hAxis,string vAxis
     {
         heroAnimator.SetFloat("H", controller.XYAxis.x);
         heroAnimator.SetFloat("V", controller.XYAxis.y);
