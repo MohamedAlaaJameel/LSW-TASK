@@ -10,6 +10,8 @@ using UnityEngine;
 public class HeroController : MonoBehaviour
 {
     [SerializeField] string heroName = "player";
+    [SerializeField] string HAxisBlendParam = "H";
+    [SerializeField] string VAxisBlendParam = "V";
     float speed;
 
     IController controller;
@@ -27,7 +29,7 @@ public class HeroController : MonoBehaviour
 
     private void Update()
     {
-        myplayer.updatePlayerAnimation();
+        myplayer.updatePlayerAnimation(HAxisBlendParam, VAxisBlendParam);
     }
     private void FixedUpdate()
     {
