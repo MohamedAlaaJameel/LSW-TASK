@@ -23,8 +23,8 @@ public class HeroController : MonoBehaviour
         rb2d = GetComponent<Rigidbody2D>();
         controller = new KeyboardController();
         animator = GetComponent<Animator>();
+
         myplayer = new Hero(heroName, controller, rb2d,animator);
-        
     }
 
     private void Update()
