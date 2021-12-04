@@ -9,7 +9,7 @@ public class EnventorySlot : MonoBehaviour
     Sprite itemSprite;
 
     public delegate void myDelegate(Sprite itemsprite);
-    public delegate void InfoDelegate(string text);
+    public delegate void InfoDelegate(string name,string cost,string type);
     public static InfoDelegate ShowitemData;
     public  static myDelegate setPlayerItem;
 
@@ -23,62 +23,36 @@ public class EnventorySlot : MonoBehaviour
     {
         itemSprite = GetComponent<Image>().sprite;
     }
-    private void BTNClick()
+    public void SetPlayerItem()//called by unity .
     {
-        Debug.Log(itemSprite.name);
-       
         setPlayerItem.Invoke(itemSprite);
     }
 
 
-    static Sprite lastShownSprite; 
-    public void ShowItemInfo()
+     public void ShowItemInfo()
     {
  
        
        
-          var infoPanel = bag.InfoPanel;
-          infoPanel.SetActive(true);
+    
           foreach (var elemnt in bag.items)
           {
-              if (itemSprite==elemnt.ItemSprite&& itemSprite != lastShownSprite)
+              if (itemSprite==elemnt.ItemSprite&& itemSprite)
               {
          
        
-                  lastShownSprite = itemSprite;
-                  ShowitemData.Invoke(
-                     
-                      $"- {elemnt.ItemName}"+
-                       $"\n"+
-       
-                       $"-{elemnt.Cost}" +
-                        $"\n" +
-                        $"-{elemnt.itemType}"
-       
-                      );
+                
+                  ShowitemData.Invoke($"{elemnt.ItemName}" , $"{elemnt.Cost}", $"{elemnt.itemType}");
                   Debug.Log(elemnt.ItemName);
                   break;
               }
           }
         
        
-        //  setPlayerItem.Invoke(itemSprite);
-       
+        
        
     }
-
-    float lastTimeCalled = 0.0f;
-
-    public void HideInfoDialog()
-    {
-        if (lastTimeCalled > 0.0f)
-        {
-            var infoPanel = bag.InfoPanel;
-            infoPanel.SetActive(false);
-
-            lastTimeCalled = Time.realtimeSinceStartup;
-        }
-    }
-    // Start is called before the first frame update
-
+  
+     
+ 
 }

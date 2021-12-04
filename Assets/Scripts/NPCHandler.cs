@@ -9,6 +9,7 @@ public class NPCHandler : MonoBehaviour
     [SerializeField] string shopKeepername="Steven";
     [SerializeField] string dialogMSG="hello here is shopkeeper";
     [SerializeField] public GameObject shopBag;
+    [SerializeField] public GameObject shopPanel;
 
     NPC shopkeeper;
     void Start()
@@ -19,6 +20,7 @@ public class NPCHandler : MonoBehaviour
     private void OnMouseDown()
     {
         shopBag.SetActive(true);
+        shopPanel.SetActive(true);
     }
 
     // Update is called once per frame
@@ -27,6 +29,7 @@ public class NPCHandler : MonoBehaviour
         if (Input.GetKey(KeyCode.Escape))
         {
             shopBag.SetActive(false);
+            shopPanel.SetActive(false);
         } 
     }
 }

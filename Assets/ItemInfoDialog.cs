@@ -6,7 +6,9 @@ using UnityEngine;
 public class ItemInfoDialog : MonoBehaviour
 {
   
-    [SerializeField] TextMeshProUGUI TMPElemnt;
+    [SerializeField] TextMeshProUGUI itemName_txt;
+    [SerializeField] TextMeshProUGUI itemCost_txt;
+    [SerializeField] TextMeshProUGUI itemType_txt;
 
  
 
@@ -16,14 +18,17 @@ public class ItemInfoDialog : MonoBehaviour
     private void Awake()
     {
         EnventorySlot.ShowitemData += ShowItemTest;
+        gameObject.SetActive(false);
     }
 
-    void ShowItemTest(string texts )
+    void ShowItemTest(string itemName,string itemcost,string itemType )
     {
         this.enabled=true;
-        transform.position = Input.mousePosition;
-        TMPElemnt.text=texts;
-    }
+        //   transform.position = Input.mousePosition;
+        itemName_txt.text= itemName;
+        itemCost_txt.text = itemcost;
+        itemType_txt.text = itemType;
+     }
 
   
 }

@@ -7,8 +7,7 @@ using UnityEngine.UI;
 [System.Serializable]
 public class ShopBag : MonoBehaviour
 {
-    public GameObject InfoPanel;
-
+ 
     [SerializeField] public  Item[]  items = new Item[9];
     static int maxBag = 9;
 
@@ -30,10 +29,5 @@ public class ShopBag : MonoBehaviour
 
 
 
-    // Update is called once per frame
-    void Update()
-    {
-
-
-    }
+ 
 }

@@ -184,7 +184,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 9144105720888090650}
         m_TargetAssemblyTypeName: EnventorySlot, Assembly-CSharp
-        m_MethodName: BTNClick
+        m_MethodName: SetPlayerItem
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -229,7 +229,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 9144105720888090650}
           m_TargetAssemblyTypeName: EnventorySlot, Assembly-CSharp
-          m_MethodName: ShowItemInfo
+          m_MethodName: HideInfoDialog
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
